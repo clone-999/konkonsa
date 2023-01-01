@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { ChatEngine } from 'react-chat-engine'
 import { useAuth } from "../contexts/AuthContext"
 import { auth } from "../firebase"
+import '../index.css';
 
 export default function Chats() {
   const didMountRef = useRef(false)
