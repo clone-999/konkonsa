@@ -1,0 +1,191 @@
+:root {
+    --container2-bg-color: #333;
+    --left-bg-color: rgba(9, 57, 146, 0.7);
+    --left-button-hover-color: rgba(11, 76, 161, 0.3);
+    --right-bg-color: rgba(43, 43, 43, 0.8);
+    --right-button-hover-color: rgba(92, 92, 92, 0.3);
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed: 1000ms;
+  }
+  
+  .input-field2 {
+    max-width: 380px;
+    background-color: #f0f0f0;
+    left: 50%;
+    top: 50%;
+    margin: 10px 0;
+    height: 55px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+  
+  .input-field2 i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    transition: 0.5s;
+    font-size: 1.1rem;
+  }
+  
+  .input-field2 input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .input-field2 input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+  }
+
+  .shw {
+    font-size: 1.5rem;
+    color: rgb(252, 6, 6);
+    position: absolute;
+    left: 50%;
+    top: 61%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  
+  h1 {
+    font-size: 4rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  
+  .button {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    height: 2.5rem;
+    padding-top: 1.3rem;
+    width: 15rem;
+    text-align: center;
+    color: #fff;
+    border: #fff solid 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transform: translateX(-50%);
+  }
+  
+  .split.left .button:hover {
+    background-color: var(--left-button-hover-color);
+    border-color: var(--left-button-hover-color);
+  }
+  
+  .split.right .button:hover {
+    background-color: var(--right-button-hover-color);
+    border-color: var(--right-button-hover-color);
+  }
+  
+  .container2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--container2-bg-color);
+  }
+  
+  .split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .split.left {
+    left:0;
+    background: url('https://img.freepik.com/free-photo/friends-family-making-videocall-catching-up_23-2149019124.jpg?w=740&t=st=1672619950~exp=1672620550~hmac=81da03cd3a1309d1f419144f48d97b10da92343ecbb7cf09b0a9e11b91b861bc') center center no-repeat;
+    background-size: cover;
+  }
+  
+  .split.left:before {
+    position:absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--left-bg-color);
+  }
+  
+  .split.right {
+    right:0;
+    background: url('https://img.freepik.com/free-photo/three-dark-skinned-guy-chatting-laptop-sitting-sideways-desk-studio-black-background_613910-20785.jpg?w=740&t=st=1672620028~exp=1672620628~hmac=1a1bb376f756ecac894379ded17836f83e1ce2045292038511bffcb11c4ee128') center center no-repeat;
+    background-size: cover;
+  }
+  
+  .split.right:before {
+    position:absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--right-bg-color);
+  }
+  
+  .split.left, .split.right, .split.right:before, .split.left:before {
+    transition: var(--speed) all ease-in-out;
+  }
+  
+  .hover-left .left {
+    width: var(--hover-width);
+  }
+  
+  .hover-left .right {
+    width: var(--other-width);
+  }
+  
+  .hover-left .right:before {
+    z-index: 2;
+  }
+  
+  
+  .hover-right .right {
+    width: var(--hover-width);
+  }
+  
+  .hover-right .left {
+    width: var(--other-width);
+  }
+  
+  .hover-right .left:before {
+    z-index: 2;
+  }
+  
+  @media(max-width: 800px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .shw {
+      font-size: 1rem;
+    }
+  
+    .button {
+      width: 12rem;
+    }
+
+    .input-field2 {
+      width: 12rem;
+    }
+  }
+  
+  @media(max-height: 700px) {
+    .button {
+      top: 70%;
+    }
+  }

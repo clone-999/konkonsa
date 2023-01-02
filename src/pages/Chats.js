@@ -24,6 +24,10 @@ export default function Chats() {
     return new File([data], "test.jpg", { type: 'image/jpeg' });
   }
 
+  function goToSelection() {
+    navigate("/selection")
+  }
+
   useEffect(() => {
     if (!didMountRef.current) {
       didMountRef.current = true
@@ -75,7 +79,7 @@ export default function Chats() {
   return (
     <div className='chats-page'>
       <div className='nav-bar'>
-        <div className='logo-tab'>
+        <div className='logo-tab' onClick={goToSelection}>
           KONKONSA
         </div>
 

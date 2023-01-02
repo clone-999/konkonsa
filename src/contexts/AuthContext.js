@@ -19,7 +19,6 @@ export function AuthProvider({ children }) {
       if(user != null){
         //console.log("user 1", user)
         setUser(user)
-        navigate('/chats')
       }
 
       setLoading(false)

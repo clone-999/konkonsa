@@ -26,6 +26,7 @@
   position: absolute;
   left: 22px;
   top: 12px;
+  cursor: pointer;
   font-size: 32px;
   font-weight: 700;
   color: white;

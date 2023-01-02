@@ -6,6 +6,8 @@ import { AuthProvider } from "./contexts/AuthContext"
 import Chats from "./pages/Chats";
 
 import Login from "./pages/Login";
+import Room from "./pages/Room";
+import Selection from "./pages/Selection";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <AuthProvider>
           <Routes>
             <Route path="/chats" element={<Chats />} exact></Route>
+            <Route path="/selection" element={<Selection />} exact></Route>
+            <Route path="/room/:roomID" element={<Room />} exact></Route>
             <Route path="/" element={<Login />} exact></Route>
           </Routes>
         </AuthProvider>

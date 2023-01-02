@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import { 
   GoogleSquareFilled, 
   FacebookFilled, 
@@ -8,10 +8,24 @@ import {
   FacebookOutlined 
 } from '@ant-design/icons'
 import firebase from 'firebase/compat/app';
-import { auth } from "../firebase"
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from "../contexts/AuthContext";
+import { auth } from "../firebase";
 import '../style.css';
 
 const Login = () => {
+  const { user } = useAuth()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+
+    if (user != null) {
+      navigate('/selection')
+      return
+    }
+    
+}, [user, navigate])
+
   return (
     <div className="container sign-up-mode">
       <div className="forms-container">
